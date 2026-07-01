@@ -1,0 +1,18 @@
+{
+  "best_model": "Support Vector Machine",
+  "results": {
+    "Multinomial Naive Bayes": {
+      "accuracy": 97.22,
+      "f1_score": 88.39
+    },
+    "Logistic Regression": {
+      "accuracy": 98.3,
+      "f1_score": 93.24
+    },
+    "Support Vector Machine": {
+      "accuracy": 98.3,
+      "f1_score": 93.29
+    }
+  },
+  "trained_on_samples": 5572
+}

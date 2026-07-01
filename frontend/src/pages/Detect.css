@@ -1,0 +1,137 @@
+.detect-page {
+  padding: 56px 0 90px;
+}
+
+.detect-header {
+  text-align: center;
+  margin-bottom: 38px;
+}
+
+.detect-header h1 {
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.detect-header p {
+  color: var(--text-muted);
+  margin-top: 10px;
+  font-size: 1.02rem;
+}
+
+.detect-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 26px;
+  align-items: start;
+}
+
+.detect-card {
+  padding: 26px;
+}
+
+.textarea-wrap textarea {
+  width: 100%;
+  resize: vertical;
+  min-height: 280px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  padding: 16px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  line-height: 1.6;
+  transition: border-color 0.2s ease;
+}
+
+.textarea-wrap textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.char-counter {
+  margin-top: 10px;
+}
+
+.char-bar {
+  height: 5px;
+  border-radius: 999px;
+  background: var(--border);
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+
+.char-bar-fill {
+  height: 100%;
+  background: var(--gradient);
+  transition: width 0.2s ease;
+}
+
+.char-counter span {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.alert-error {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  background: var(--danger-bg);
+  color: var(--danger);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.detect-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.loader {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2.5px solid rgba(255, 255, 255, 0.4);
+  border-top-color: #fff;
+  animation: spin 0.7s linear infinite;
+  display: inline-block;
+}
+
+.loader-lg {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 4px solid var(--border);
+  border-top-color: var(--primary);
+  animation: spin 0.8s linear infinite;
+  margin: 0 auto 16px;
+  display: block;
+}
+
+.loading-card,
+.placeholder-card {
+  padding: 50px 30px;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.loading-card p {
+  font-size: 0.92rem;
+}
+
+.placeholder-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 880px) {
+  .detect-grid {
+    grid-template-columns: 1fr;
+  }
+}

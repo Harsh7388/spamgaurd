@@ -1,0 +1,148 @@
+.result-card {
+  padding: 28px;
+  border-left: 5px solid var(--border);
+}
+
+.result-card.is-spam {
+  border-left-color: var(--danger);
+}
+
+.result-card.is-ham {
+  border-left-color: var(--success);
+}
+
+.result-top {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.result-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  font-size: 1.6rem;
+  flex-shrink: 0;
+}
+
+.result-icon.spam {
+  background: var(--danger-bg);
+  color: var(--danger);
+}
+
+.result-icon.ham {
+  background: var(--success-bg);
+  color: var(--success);
+}
+
+.result-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.result-verdict {
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+
+.result-confidence {
+  margin-left: auto;
+  text-align: right;
+}
+
+.confidence-value {
+  font-size: 1.6rem;
+  font-weight: 800;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.prob-bars {
+  margin-top: 26px;
+}
+
+.prob-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.prob-track {
+  height: 9px;
+  border-radius: 999px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.prob-fill {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.6s ease;
+}
+
+.prob-fill.spam {
+  background: linear-gradient(90deg, var(--danger), #fb7185);
+}
+
+.prob-fill.ham {
+  background: linear-gradient(90deg, var(--success), #4ade80);
+}
+
+.keywords-section {
+  margin-top: 22px;
+}
+
+.keyword-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.chip {
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--danger-bg);
+  color: var(--danger);
+  font-size: 0.84rem;
+  font-weight: 700;
+  border: 1px solid color-mix(in srgb, var(--danger) 30%, transparent);
+}
+
+.explanation-box {
+  margin-top: 22px;
+  padding: 16px 18px;
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.model-used {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
