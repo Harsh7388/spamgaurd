@@ -11,3 +11,16 @@ services:
     startCommand: gunicorn -w 4 -b 0.0.0.0:$PORT app:app
     healthCheckPath: /health
     autoDeploy: true
+
+  - type: static_site
+    name: spamguard-frontend
+    plan: free
+    region: oregon
+    rootDir: frontend
+    buildCommand: >-
+      npm install && npm run build
+    staticPublishPath: dist
+    env:
+      - key: VITE_API_URL
+        value: https://spamguard-backend.onrender.com
+    autoDeploy: true
