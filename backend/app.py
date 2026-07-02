@@ -7,6 +7,7 @@ Endpoints:
 """
 import json
 import os
+import sys
 from pathlib import Path
 
 import joblib
@@ -14,12 +15,15 @@ import numpy as np
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 
+BASE_DIR = Path(__file__).resolve().parent
+if str(BASE_DIR) not in sys.path:
+    sys.path.insert(0, str(BASE_DIR))
+
 from preprocess import clean_text
 
 app = Flask(__name__)
 CORS(app)
 
-BASE_DIR = Path(__file__).resolve().parent
 MODEL_PATH = BASE_DIR / "spam_model.pkl"
 VEC_PATH = BASE_DIR / "vectorizer.pkl"
 META_PATH = BASE_DIR / "model_metadata.json"
@@ -103,6 +107,15 @@ def build_explanation(prediction, keywords):
             "This email's content and language pattern resemble normal, legitimate "
             "correspondence. No strong spam indicators were detected."
         )
+
+
+@app.route("/", methods=["GET"])
+def index():
+    return jsonify({
+        "status": "ok",
+        "service": "SpamGuard API",
+        "message": "Backend is running.",
+    })
 
 
 @app.route("/health", methods=["GET"])
