@@ -1,0 +1,13 @@
+# Tell Nixpacks this is a Python project
+providers = ["python"]
+
+# After the default install phase (which runs pip install -r requirements.txt),
+# we add a custom build phase to download the NLTK data.
+[phases.build]
+dependsOn = ["install"]
+cmds = [
+  "python -c \"import nltk; nltk.download('stopwords'); nltk.download('wordnet'); nltk.download('omw-1.4'); nltk.download('punkt'); nltk.download('punkt_tab')\""
+]
+
+[start]
+cmd = "gunicorn -w 4 -b 0.0.0.0:$PORT app:app"
