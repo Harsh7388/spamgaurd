@@ -32,8 +32,11 @@ export default function Detect() {
       const data = await predictSpam(message);
       setResult(data);
     } catch (err) {
-      const message = err?.response?.data?.error || err?.message || "Couldn't reach the SpamGuard backend. Please try again in a moment.";
-      setError(message);
+      const errMsg =
+        err?.response?.data?.error ||
+        err?.message ||
+        "Couldn't reach the SpamGuard backend. The server may be starting up — please wait a moment and try again.";
+      setError(errMsg);
     } finally {
       setLoading(false);
     }
