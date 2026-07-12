@@ -1,0 +1,11 @@
+[build]
+  # Since the repo has backend and frontend folders, we need to tell Netlify
+  # to run the build in the frontend directory.
+  base = "frontend"
+  publish = "dist"
+  command = "npm install && npm run build"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
